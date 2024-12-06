@@ -1,0 +1,145 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- ガチリク‼囲み -->
+    <path id="enclosure" d="M220 160 H380 V450 H220 Z" stroke="#FF0000" stroke-width="2" fill="none"
+          stroke-dasharray="920" stroke-dashoffset="920">
+        <!-- 線を描くアニメーション -->
+        <animate id="enclosure-anim" attributeName="stroke-dashoffset" from="920" to="0" dur="1s"
+                 begin="0s; reset-anim.end + 5s" fill="freeze"/>
+        <!-- 線を消すアニメーション -->
+        <animate id="enclosure-reset" attributeName="stroke-dashoffset" from="0" to="920" dur="0.1s"
+                 begin="last-anim.end + 5s" fill="freeze"/>
+    </path>
+    <text x="300" y="150" text-anchor="middle" fill="#FF0000" font-size="20" font-weight="bold">ガチリク‼</text>
+
+    <!-- 学生 -->
+    <circle id="student" cx="100" cy="200" r="40" fill="#87CEEB"/>
+    <text x="100" y="205" text-anchor="middle" fill="white" font-size="16">学生</text>
+
+    <!-- ESブロック -->
+    <rect id="es" x="250" y="170" width="100" height="60" rx="10" fill="#0066CC"/>
+    <text x="300" y="205" text-anchor="middle" fill="white" font-size="24">ES</text>
+
+    <!-- 学生からESへのオレンジ色の線 -->
+    <path id="line-student-es" d="M140 200 L250 200" stroke="#FFA500" stroke-width="2" fill="none"
+          stroke-dasharray="110" stroke-dashoffset="110">
+        <!-- 線を描くアニメーション -->
+        <animate id="line-student-es-anim" attributeName="stroke-dashoffset" from="110" to="0" dur="1s"
+                 begin="enclosure-anim.begin + 1s" fill="freeze"/>
+        <!-- 線を消すアニメーション -->
+        <animate attributeName="stroke-dashoffset" from="0" to="110" dur="0.1s"
+                 begin="last-anim.end + 5s" fill="freeze"/>
+    </path>
+
+    <!-- A社 -->
+    <circle id="company-a" cx="500" cy="200" r="30" fill="#FFA07A"/>
+    <text x="500" y="205" text-anchor="middle" fill="white" font-size="16">A社</text>
+
+    <!-- ESからA社への灰色の線 -->
+    <path id="line-es-company-a" d="M350 200 L470 200" stroke="#808080" stroke-width="2" fill="none"
+          stroke-dasharray="120" stroke-dashoffset="120">
+        <!-- 線を描くアニメーション -->
+        <animate id="line-es-company-a-anim" attributeName="stroke-dashoffset" from="120" to="0" dur="1s"
+                 begin="enclosure-anim.begin + 2s" fill="freeze"/>
+        <!-- 線を消すアニメーション -->
+        <animate attributeName="stroke-dashoffset" from="0" to="120" dur="0.1s"
+                 begin="last-anim.end + 5s" fill="freeze"/>
+    </path>
+
+    <!-- データブロック -->
+    <rect id="data-block" x="250" y="280" width="100" height="40" rx="5" fill="#006666"/>
+    <text x="300" y="305" text-anchor="middle" fill="white" font-size="16">データ</text>
+
+    <!-- ESからデータブロックへの太い黒色の線 -->
+    <path id="line-es-data" d="M300 230 L300 280" stroke="#000000" stroke-width="4" fill="none"
+          stroke-dasharray="50" stroke-dashoffset="50">
+        <!-- 線を描くアニメーション -->
+        <animate id="line-es-data-anim" attributeName="stroke-dashoffset" from="50" to="0" dur="1s"
+                 begin="enclosure-anim.begin + 3s" fill="freeze"/>
+        <!-- 線を消すアニメーション -->
+        <animate attributeName="stroke-dashoffset" from="0" to="50" dur="0.1s"
+                 begin="last-anim.end + 5s" fill="freeze"/>
+    </path>
+
+    <!-- 企業グループ（B社、C社、D社） -->
+    <ellipse cx="600" cy="300" rx="80" ry="100" fill="none" stroke="#0066CC" stroke-width="2"/>
+    <!-- B社 -->
+    <circle id="company-b" cx="600" cy="240" r="25" fill="#90EE90"/>
+    <text x="600" y="245" text-anchor="middle" fill="white" font-size="14">B社</text>
+    <!-- C社 -->
+    <circle id="company-c" cx="600" cy="300" r="25" fill="#DDA0DD"/>
+    <text x="600" y="305" text-anchor="middle" fill="white" font-size="14">C社</text>
+    <!-- D社 -->
+    <circle id="company-d" cx="600" cy="360" r="25" fill="#808080"/>
+    <text x="600" y="365" text-anchor="middle" fill="white" font-size="14">D社</text>
+
+    <!-- データブロックから企業グループへの灰色の線 -->
+    <path id="line-data-companies" d="M350 300 C450 300, 500 300, 520 300" stroke="#000000" stroke-width="2" fill="none"
+          stroke-dasharray="200" stroke-dashoffset="200">
+        <!-- 線を描くアニメーション -->
+        <animate id="line-data-companies-anim" attributeName="stroke-dashoffset" from="200" to="0" dur="1s"
+                 begin="enclosure-anim.begin + 4s" fill="freeze"/>
+        <!-- 線を消すアニメーション -->
+        <animate attributeName="stroke-dashoffset" from="0" to="200" dur="0.1s"
+                 begin="last-anim.end + 5s" fill="freeze"/>
+    </path>
+
+    <!-- 権利ブロック -->
+    <rect id="rights-block" x="250" y="380" width="100" height="40" rx="5" fill="#90EE90"/>
+    <text x="300" y="405" text-anchor="middle" fill="white" font-size="16">権利</text>
+
+    <!-- 各企業から権利ブロックへの灰色の線 -->
+    <!-- B社から権利ブロック -->
+    <path id="line-company-b-rights" d="M575 240 L350 400" stroke="#808080" stroke-width="2" fill="none"
+          stroke-dasharray="276" stroke-dashoffset="276">
+        <!-- 線を描くアニメーション -->
+        <animate id="line-company-b-rights-anim" attributeName="stroke-dashoffset" from="276" to="0" dur="1s"
+                 begin="enclosure-anim.begin + 5s" fill="freeze"/>
+        <!-- 線を消すアニメーション -->
+        <animate attributeName="stroke-dashoffset" from="0" to="276" dur="0.1s"
+                 begin="last-anim.end + 5s" fill="freeze"/>
+        <!-- 抽選のためのフェードアウト -->
+        <animate attributeName="opacity" from="1" to="0" dur="1s" begin="enclosure-anim.begin + 7s" fill="freeze"/>
+        <!-- オパシティをリセット -->
+        <set attributeName="opacity" to="1" begin="last-anim.end + 5s" fill="freeze"/>
+    </path>
+    <!-- C社から権利ブロック -->
+    <path id="line-company-c-rights" d="M575 300 L350 400" stroke="#808080" stroke-width="2" fill="none"
+          stroke-dasharray="246" stroke-dashoffset="246">
+        <!-- 線を描くアニメーション -->
+        <animate id="line-company-c-rights-anim" attributeName="stroke-dashoffset" from="246" to="0" dur="1s"
+                 begin="enclosure-anim.begin + 5s" fill="freeze"/>
+        <!-- 線を消すアニメーション -->
+        <animate attributeName="stroke-dashoffset" from="0" to="246" dur="0.1s"
+                 begin="last-anim.end + 5s" fill="freeze"/>
+        <!-- 抽選のための色変更 -->
+        <animate attributeName="stroke" from="#808080" to="#FFA500" dur="1s"
+                 begin="enclosure-anim.begin + 7s" fill="freeze"/>
+        <!-- ストロークカラーをリセット -->
+        <set attributeName="stroke" to="#808080" begin="last-anim.end + 5s" fill="freeze"/>
+    </path>
+    <!-- D社から権利ブロック -->
+    <path id="line-company-d-rights" d="M575 360 L350 400" stroke="#808080" stroke-width="2" fill="none"
+          stroke-dasharray="228" stroke-dashoffset="228">
+        <!-- 線を描くアニメーション -->
+        <animate id="line-company-d-rights-anim" attributeName="stroke-dashoffset" from="228" to="0" dur="1s"
+                 begin="enclosure-anim.begin + 5s" fill="freeze"/>
+        <!-- 線を消すアニメーション -->
+        <animate attributeName="stroke-dashoffset" from="0" to="228" dur="0.1s"
+                 begin="last-anim.end + 5s" fill="freeze"/>
+        <!-- 抽選のためのフェードアウト -->
+        <animate attributeName="opacity" from="1" to="0" dur="1s" begin="enclosure-anim.begin + 7s" fill="freeze"/>
+        <!-- オパシティをリセット -->
+        <set attributeName="opacity" to="1" begin="last-anim.end + 5s" fill="freeze"/>
+    </path>
+
+    <!-- 権利ブロックから学生へのオレンジ色の線 -->
+    <path id="line-rights-student" d="M250 400 L100 240" stroke="#FFA500" stroke-width="4" fill="none"
+          stroke-dasharray="219" stroke-dashoffset="219">
+        <!-- 線を描くアニメーション -->
+        <animate id="last-anim" attributeName="stroke-dashoffset" from="219" to="0" dur="1s"
+                 begin="enclosure-anim.begin + 8s" fill="freeze"/>
+        <!-- 線を消すアニメーション -->
+        <animate id="reset-anim" attributeName="stroke-dashoffset" from="0" to="219" dur="0.1s"
+                 begin="last-anim.end + 5s" fill="freeze"/>
+    </path>
+</svg>
